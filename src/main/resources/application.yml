@@ -1,2 +1,16 @@
 server:
-  port: 8090
+  port: 8082
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:jpa
+    initialization-mode: always
+    platform: h2
+    driver-class-name: org.h2.Driver
+  jpa:
+    open-in-view: false
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+  h2:
+    console.enabled: true
