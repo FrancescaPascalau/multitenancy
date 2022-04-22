@@ -1,5 +1,6 @@
 package com.francesca.pascalau.domain.service;
 
+import com.francesca.pascalau.config.TenantContext;
 import com.francesca.pascalau.data.entities.Employee;
 import com.francesca.pascalau.data.repositories.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,5 +20,11 @@ public class EmployeeService {
 
     public Employee findEmployeeById(Long employeeId) {
         return repository.findById(employeeId).orElse(null);
+    }
+
+    public Employee save(Employee employee) {
+        employee.setTenantId(TenantContext.getCurrentTenant());
+        
+        return repository.save(employee);
     }
 }
