@@ -1,7 +1,9 @@
 package com.francesca.pascalau.controller;
 
 import com.francesca.pascalau.data.entities.Employee;
+import com.francesca.pascalau.data.entities.Payment;
 import com.francesca.pascalau.domain.service.EmployeeService;
+import com.francesca.pascalau.domain.service.PaymentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -21,6 +23,7 @@ import java.util.List;
 public class AppController {
 
     private final EmployeeService employeeService;
+    private final PaymentService paymentService;
 
     @GetMapping("/employees")
     public ResponseEntity<List<Employee>> getAllEmployees() {
@@ -39,6 +42,20 @@ public class AppController {
     @PostMapping("/employee/add")
     public ResponseEntity<Employee> addNewEmployee(@RequestBody Employee employee) {
         Employee saved = employeeService.save(employee);
+
+        return new ResponseEntity<>(saved, new HttpHeaders(), HttpStatus.OK);
+    }
+
+    @GetMapping("/payments")
+    public ResponseEntity<List<Payment>> getAllPayments() {
+        List<Payment> payments = paymentService.findPayments();
+
+        return new ResponseEntity<>(payments, new HttpHeaders(), HttpStatus.OK);
+    }
+
+    @PostMapping("/payment/add")
+    public ResponseEntity<Payment> addPayment(@RequestBody Payment payment) {
+        Payment saved = paymentService.save(payment);
 
         return new ResponseEntity<>(saved, new HttpHeaders(), HttpStatus.OK);
     }

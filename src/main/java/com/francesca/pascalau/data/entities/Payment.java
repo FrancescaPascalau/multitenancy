@@ -19,7 +19,9 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String tenantId;
+//    private String tenantId;
+    
+    private Long employeeId;
 
     private Long amount;
 }
