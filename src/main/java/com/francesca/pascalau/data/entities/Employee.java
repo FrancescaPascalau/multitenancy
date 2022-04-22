@@ -17,7 +17,7 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private Long tenantId;
+    private String tenantId;
 
     private String fullName;
 }

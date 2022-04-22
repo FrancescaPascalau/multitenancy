@@ -19,6 +19,15 @@ Or think about it like this:
 3. `Shared Database, Shared Schema`: Everyone is living in the same apartment and all stuff is marked with sticky-notes
    to show who owns it.
 
+### Multitenant Example - Spring Data JPA configurations
+
+Both Spring and Hibernate support multitenancy.
+
+1. On the Spring side, we will have one class to implement that intercepts the request and, on its basis, sets the
+   appropriate tenant in the context (`TenantContext`).
+2. Implement the interface `org.springframework.web.servlet.AsyncHandlerInterceptor`. We have to override
+   the `preHandle()` and `postHandle()` methods in order to intercept the request and then clear the `TenantContext`.
+
 ### References
 
 https://www.bytefish.de/blog/spring_boot_multitenancy.html

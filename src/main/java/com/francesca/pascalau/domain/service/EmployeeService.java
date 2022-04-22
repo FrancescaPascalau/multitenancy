@@ -2,7 +2,6 @@ package com.francesca.pascalau.domain.service;
 
 import com.francesca.pascalau.data.entities.Employee;
 import com.francesca.pascalau.data.repositories.EmployeeRepository;
-import com.francesca.pascalau.data.repositories.TenantRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,5 +15,9 @@ public class EmployeeService {
 
     public List<Employee> findEmployees() {
         return repository.findAll();
+    }
+
+    public Employee findEmployeeById(Long employeeId) {
+        return repository.findById(employeeId).orElse(null);
     }
 }

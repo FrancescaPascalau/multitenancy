@@ -20,7 +20,7 @@ public class Receipt {
 
     private Long employeeId;
 
-    private Long tenantId;
+    private String tenantId;
 
     private Long amount;
 
