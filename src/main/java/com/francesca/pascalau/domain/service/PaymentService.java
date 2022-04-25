@@ -6,14 +6,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class PaymentService {
 
     private final PaymentRepository repository;
-    private final EmployeeService employeeService;
 
     /**
      * Since the creation of the class AbstractBaseEntity which contains the tenantId Filter

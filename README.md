@@ -21,6 +21,10 @@ Or think about it like this:
 
 ### Multitenant Example - Spring Data JPA configurations
 
+## Implementing the Shared Database with Discriminator Column pattern using Hibernate Filters
+
+![](database.png)
+
 Both Spring and Hibernate support multitenancy.
 
 1. On the Spring side, we will have one class to implement that intercepts the request and, on its basis, sets the
