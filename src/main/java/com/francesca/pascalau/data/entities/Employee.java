@@ -3,9 +3,6 @@ package com.francesca.pascalau.data.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Filter;
-import org.hibernate.annotations.FilterDef;
-import org.hibernate.annotations.ParamDef;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,15 +13,13 @@ import javax.persistence.Id;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@FilterDef(name = "tenantId", parameters = {@ParamDef(name = "tenantId", type = "String")})
-@Filter(name = "tenantId", condition = "tenant_id = :tenantId")
-public class Employee {
+public class Employee extends AbstractBaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String tenantId;
+//    private String tenantId;
 
     private String fullName;
 }

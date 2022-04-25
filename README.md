@@ -31,3 +31,5 @@ Both Spring and Hibernate support multitenancy.
 ### References
 
 https://www.bytefish.de/blog/spring_boot_multitenancy.html
+
+https://callistaenterprise.se/blogg/teknik/2020/10/17/multi-tenancy-with-spring-boot-part5/

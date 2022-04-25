@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Tenant {
+public class Tenant extends AbstractBaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

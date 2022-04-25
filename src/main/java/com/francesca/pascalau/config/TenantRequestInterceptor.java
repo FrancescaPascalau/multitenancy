@@ -21,7 +21,6 @@ public class TenantRequestInterceptor implements AsyncHandlerInterceptor {
     public boolean preHandle(HttpServletRequest request,
                              HttpServletResponse response,
                              Object object) throws Exception {
-        System.out.println("Intercepting the request with preHandle method");
         String tenantID = request.getHeader("X-TenantID");
         System.out.println("Searching for X-TenantID: " + tenantID);
 

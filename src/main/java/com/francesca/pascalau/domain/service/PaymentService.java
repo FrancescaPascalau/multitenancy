@@ -15,10 +15,15 @@ public class PaymentService {
     private final PaymentRepository repository;
     private final EmployeeService employeeService;
 
+    /**
+     * Since the creation of the class AbstractBaseEntity which contains the tenantId Filter
+     * that will be applied at Runtime on all entities that extends it.
+     */
     public List<Payment> findPayments() {
-        return employeeService.findEmployees().stream()
-                .map(employee -> repository.findByEmployeeId(employee.getId()))
-                .collect(Collectors.toList());
+//        return employeeService.findEmployees().stream()
+//                .map(employee -> repository.findByEmployeeId(employee.getId()))
+//                .collect(Collectors.toList());
+        return repository.findAll();
     }
 
     public Payment save(Payment payment) {

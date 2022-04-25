@@ -13,14 +13,14 @@ import javax.persistence.Id;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Payment {
+public class Payment extends AbstractBaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 //    private String tenantId;
-    
+
     private Long employeeId;
 
     private Long amount;
