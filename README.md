@@ -32,6 +32,16 @@ Both Spring and Hibernate support multitenancy.
 2. Implement the interface `org.springframework.web.servlet.AsyncHandlerInterceptor`. We have to override
    the `preHandle()` and `postHandle()` methods in order to intercept the request and then clear the `TenantContext`.
 
+### Some errors encountered:
+
+- Configuration of `transactionManager` ignored without the application.yml config:
+  `jpa:
+    open-in-view: false`
+  -> **false**: it needs `@Transactional`
+  -> **true**: no need for `@Transactional`
+- `@Aspect` not working without `@Transactional` on service method;
+- The `entityManager` is intercepted during a transaction, when a session is opened;
+
 ### References
 
 https://www.bytefish.de/blog/spring_boot_multitenancy.html
